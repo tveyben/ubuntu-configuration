@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# prepare
+sudo apt-get update
+
+# install programs
+sudo apt-get -y install \
+	wireshark 	\
+	vim		\
+	gparted		\
+	smartmontools	\
+	numlockx	\
+	openssh-server	\
+	tree		\
+	iotop		\
+	git		\
+
+
+# TODO: post script or guide to add current user to a wireshark group
+
+
