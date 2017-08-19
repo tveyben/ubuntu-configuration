@@ -1,10 +1,12 @@
 #!/bin/bash
 
-# prepare
+# PREPARE
 sudo apt-get update
 
-# install programs
+### INSTALL PROGRAMS #########################################################
+# General apps
 sudo apt-get -y install \
+	dconf-editor	\
 	wireshark 	\
 	vim		\
 	gparted		\
@@ -14,8 +16,46 @@ sudo apt-get -y install \
 	tree		\
 	iotop		\
 	git		\
+	htop		\
+	compizconfig-settings-manager	\
+
+
+# Krusader and it's dependencies
+sudo apt-get -y install \
+	krusader	\
+	khelpcenter	\
+	kde-baseapps-bin\
+	kdiff3		\
+	krename		\
+	unrar		\
+	rar		\
+	
+
+### CONFIGURE UI #############################################################
+# Move menu's to the app itself 
+dconf write /com/canonical/unity/integrated-menus true			
+
+# Always show the menu
+dconf write /com/canonical/unity/always-show-menus true
+
+# Enable 2x2 workspace layout		
+dconf write /org/compiz/profiles/unity/plugins/core/hsize 2		
+dconf write /org/compiz/profiles/unity/plugins/core/vsize 2
+
+# Trackpad scroll like my Mac :-)
+dconf write /org/gnome/desktop/peripherals/touchpad/natural-scroll true
+
+
+# Format date/time in menubar
+dconf write /com/canonical/indicator/datetime/time-format "'custom'"
+dconf write /com/canonical/indicator/datetime/show-week-numbers true
+dconf write /com/canonical/indicator/datetime/custom-time-format "'%A %d/%m-%Y   %I:%M:%S'"
 
 
 # TODO: post script or guide to add current user to a wireshark group
+
+# for git
+# git config --global user.email "teve@tdc.dk"
+# git config --global user.name  "Thomas von Eyben"
 
 
