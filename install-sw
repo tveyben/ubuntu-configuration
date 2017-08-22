@@ -18,6 +18,10 @@ sudo apt-get -y install \
 	git		\
 	htop		\
 	compizconfig-settings-manager	\
+	virtualbox	\
+	freeplane	\
+
+
 
 
 # Krusader and it's dependencies
@@ -49,7 +53,10 @@ dconf write /org/gnome/desktop/peripherals/touchpad/natural-scroll true
 # Format date/time in menubar
 dconf write /com/canonical/indicator/datetime/time-format "'custom'"
 dconf write /com/canonical/indicator/datetime/show-week-numbers true
-dconf write /com/canonical/indicator/datetime/custom-time-format "'%A %d/%m-%Y   %I:%M:%S'"
+dconf write /com/canonical/indicator/datetime/custom-time-format "'%A %d/%m-%Y   %H:%M:%S'"
+
+# Battery
+dconf write /com/canonical/indicator/power/show-time true
 
 
 # TODO: post script or guide to add current user to a wireshark group
