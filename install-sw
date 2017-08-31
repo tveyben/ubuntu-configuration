@@ -1,5 +1,17 @@
 #!/bin/bash
 
+### Synaptics trackpad setings
+# interesting reading: http://lukeluo.blogspot.dk/2014/04/mac-book-pro-113-linux-customization-5.html
+if [[ $(sudo lshw 2>&1 | grep "version: ThinkPad L450" | wc -l) = '1' ]]; then
+    echo "Configuring synaptics on ThinkPad L450"
+    synclient VertScrollDelta=-140	# default was -114
+    synclient HorizScrollDelta=-140 	# default was -114
+    synclient PalmDetect=1 	# default was 0 (need long time testing to tune the other palm* values)
+    synclient FingerHigh=40	# default was 30
+    synclient FingerLow=35	# default was 25
+fi
+
+
 # PREPARE
 sudo apt-get update
 
@@ -21,7 +33,18 @@ sudo apt-get -y install \
 	virtualbox	\
 	freeplane	\
 	xclip		\
+	curl		\
 
+
+
+
+# Python development
+sudo apt-get -y install	\
+	python-pip	\
+
+
+pip install virtualenv
+pip install --upgrade pip
 
 
 
