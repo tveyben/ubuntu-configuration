@@ -16,10 +16,10 @@ fi
 sudo apt-get update
 
 ### INSTALL PROGRAMS #########################################################
-# General apps
+# System tools
 sudo apt-get -y install \
 	dconf-editor	\
-	wireshark 	\
+	unity-tweak-tool\
 	vim		\
 	gparted		\
 	smartmontools	\
@@ -30,9 +30,13 @@ sudo apt-get -y install \
 	git		\
 	htop		\
 	compizconfig-settings-manager	\
-	virtualbox	\
 	xclip		\
 	curl		\
+
+# General apps
+sudo apt-get -y install \
+	wireshark 	\
+	virtualbox	\
 
 
 
