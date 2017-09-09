@@ -1,4 +1,10 @@
 #!/bin/bash
+# TODO
+# FIX Clashing shortcuts between default ubuntu and PyCharm (intellij IDE's)
+# https://askubuntu.com/questions/412046/unable-to-use-intellij-idea-keyboard-shortcuts-on-ubuntu
+
+
+
 
 ### Synaptics trackpad setings
 # interesting reading: http://lukeluo.blogspot.dk/2014/04/mac-book-pro-113-linux-customization-5.html
