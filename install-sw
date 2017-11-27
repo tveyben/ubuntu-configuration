@@ -63,17 +63,15 @@ sudo apt-get update
 sudo apt-get -y install \
 	dconf-editor	\
 	unity-tweak-tool\
-	vim		\
 	gparted		\
 	smartmontools	\
 	numlockx	\
 	openssh-server	\
 	tree		\
 	iotop		\
-	git		\
 	htop		\
 	compizconfig-settings-manager	\
-	xclip		\
+	tmux		\
 	curl		\
 
 # General apps
