@@ -31,6 +31,12 @@
 # https://superuser.com/questions/358749/how-to-disable-ctrlshiftu-in-ubuntu-linux
 
 
+# TODO 
+# Move CONFIGURATIONS to a seperate script than the INSTALLATION
+
+# Make Caps lock Control_L (EG for for tmux)
+# https://era86.github.io/2017/01/14/remapping-capslock-to-escape-in-ubuntu-1604.html
+dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:ctrl_modifier']"
 
 
 ### Synaptics trackpad setings
