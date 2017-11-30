@@ -34,6 +34,9 @@
 # TODO 
 # Move CONFIGURATIONS to a seperate script than the INSTALLATION
 
+# TODO MANAGE DOT FILES SMART
+# https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
+
 # Make Caps lock Control_L (EG for for tmux)
 # https://era86.github.io/2017/01/14/remapping-capslock-to-escape-in-ubuntu-1604.html
 dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:ctrl_modifier']"
