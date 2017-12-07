@@ -82,6 +82,8 @@ sudo apt-get -y install \
 	compizconfig-settings-manager	\
 	tmux		\
 	curl		\
+	exfat-fuse	\
+	exfat-utils 	\
 
 # General apps
 sudo apt-get -y install \
