@@ -113,6 +113,12 @@ sudo apt-get -y install \
 	unrar		\
 	rar		\
 	
+# vim version 8
+sudo add-apt-repository -y ppa:jonathonf/vim
+sudo apt update
+sudo apt install -y vim
+
+
 
 ### CONFIGURE UI #############################################################
 # Move menu's to the app itself 
