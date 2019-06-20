@@ -51,18 +51,37 @@ if [[ $(sudo lshw 2>&1 | grep "version: ThinkPad L450" | wc -l) = '1' ]]; then
     echo "Configuring synaptics on ThinkPad L450"
     synclient VertScrollDelta=-200   # default -114
     synclient HorizScrollDelta=-200  # default -114
+# Palm detection
     synclient PalmDetect=1           # default 0 (need long time testing to tune the other palm* values)
-    synclient FingerHigh=40          # default 30
+    PalmMinWidth=10                  # default 10
+    PalmMinZ=200                     # default 200
+    synclient FingerHigh=55          # default 30
     synclient FingerLow=35           # default 25
-    # Mouse movement
+# Mouse movement
     synclient AccelFactor=0.03       # default 0.0348918
     synclient MinSpeed=1             # default 1
     synclient MaxSpeed=1.75          # default 1.75
-    # Scroll after release
+# Scroll after release
     synclient CoastingSpeed=20       # default 20
     synclient CoastingFriction=50   # default 50
 fi
 
+### How to debug trackpad
+# source http://lukeluo.blogspot.com/2014/04/mac-book-pro-113-linux-customization-5.html
+
+# Identify device ID:
+	# cat /proc/bus/input/devices
+# Make sure "synclient GrabEventDevice=0", so X won't monopolize the event source and evtest can capture the event at the same time with X.
+
+# then monitor the events, eg filtering for presssure
+	# sudo evtest /dev/input/event5 | grep -i abs_pressure
+
+
+# Tip for identying which conf files are used by a package
+	# https://askubuntu.com/questions/818732/how-do-i-disable-the-default-syndaemon
+### BUG: palm detect not working (ABS_TOOL_WIDHT lways reporting 0)
+	# Must test this solution (upgrade to latest libinput & libwacom)
+	# https://unix.stackexchange.com/questions/463447/libinput-palm-detection-not-working
 
 # PREPARE
 sudo apt-get update
@@ -84,6 +103,8 @@ sudo apt-get -y install \
 	curl		\
 	exfat-fuse	\
 	exfat-utils 	\
+	evtest		\
+
 
 # General apps
 sudo apt-get -y install \
