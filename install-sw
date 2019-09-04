@@ -66,6 +66,26 @@ if [[ $(sudo lshw 2>&1 | grep "version: ThinkPad L450" | wc -l) = '1' ]]; then
     synclient CoastingFriction=50   # default 50
 fi
 
+### MAKE SYNAPTIC CHANGES PERSIST ACROSS REBOOT
+# TODO: make script that does this
+# https://askubuntu.com/questions/290009/how-do-i-make-my-synclient-settings-stick
+# The best method that have worked for me is to add your changes into Xsession.d, so it will load automatically for all users when you log into X:
+
+# (the file doesn't exists, so you can name it whatever you want. The numbers on the left means the order in which it will be executed in comparison with the other files.)
+
+# /etc/X11/Xsession.d/80synaptics
+
+# (owned by root, with permissions 644)
+
+# For example, you can use this as base:
+
+##https://wiki.archlinux.org/index.php/Touchpad_Synaptics
+##Palm dimension
+##synclient PalmDetect=1
+##synclient PalmMinWidth=4
+##...
+##########################
+
 ### How to debug trackpad
 # source http://lukeluo.blogspot.com/2014/04/mac-book-pro-113-linux-customization-5.html
 
