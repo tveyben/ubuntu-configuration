@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=syndaemon -k -K -d -i 0.2 -R
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Syndaemon
+Name=Syndaemon
+Comment[en_US]=Eliminates the interference between keyboard and trackpad
+Comment=Eliminates the interference between keyboard and trackpad

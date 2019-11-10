@@ -47,6 +47,11 @@ dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:ctrl_modifier']
 #    http://lukeluo.blogspot.dk/2014/04/mac-book-pro-113-linux-customization-5.html
 #    https://www.x.org/archive/X11R7.5/doc/man/man4/synaptics.4.html
 
+# Add "syndaemon -k -K -d -i 0.2 -R" command to autostart at login
+cp syndaemon.desktop ~/.config/autostart/
+
+
+
 if [[ $(sudo lshw 2>&1 | grep "version: ThinkPad L450" | wc -l) = '1' ]]; then
     echo "Configuring synaptics on ThinkPad L450"
     synclient VertScrollDelta=-200   # default -114
