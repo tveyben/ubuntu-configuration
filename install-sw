@@ -58,8 +58,8 @@ if [[ $(sudo lshw 2>&1 | grep "version: ThinkPad L450" | wc -l) = '1' ]]; then
     synclient HorizScrollDelta=-200  # default -114
 # Palm detection
     synclient PalmDetect=1           # default 0 (need long time testing to tune the other palm* values)
-    PalmMinWidth=10                  # default 10
-    PalmMinZ=200                     # default 200
+    synclient PalmMinWidth=10        # default 10
+    synclient PalmMinZ=200           # default 200
     synclient FingerHigh=55          # default 30
     synclient FingerLow=35           # default 25
 # Mouse movement
